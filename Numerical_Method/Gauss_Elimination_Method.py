@@ -1,30 +1,26 @@
-def gauss_elimination(A, b):
-    n = len(b)
-    for i in range(n):
-        max_row = max(range(i, n), key=lambda r: abs(A[r][i]))
-        if i != max_row:
-            A[i], A[max_row] = A[max_row], A[i]
-            b[i], b[max_row] = b[max_row], b[i]
 
-        for j in range(i + 1, n):
-            factor = A[j][i] / A[i][i]
-            for k in range(i, n):
-                A[j][k] -= factor * A[i][k]
-            b[j] -= factor * b[i]
 
-    x = [0 for _ in range(n)]
-    for i in range(n - 1, -1, -1):
-        s = sum(A[i][j] * x[j] for j in range(i + 1, n))
-        x[i] = (b[i] - s) / A[i][i]
+def gauss_elemination(A):
+   
+    for i in range(1,5):
+        A[1][-i]=A[1][-i]-A[0][-i]*(A[1][0]/A[0][0])
+        A[2][-i]=A[2][-i]-A[0][-i]*(A[2][0]/A[0][0])
 
+    for i in range(1,4):
+        A[2][-i]=A[2][-i]-A[1][-i]*(A[2][1]/A[1][1])
+  
+    x=[0,0,0]
+    x[2]=A[2][3]/A[2][2]
+    x[1]=(A[1][3]-A[1][2]*x[2])/A[1][1]
+    x[0]=(A[0][3]-A[0][2]*x[2]-A[0][1]*x[1])/A[0][0]
     return x
 
-A = [
-    [2, -1, 1],
-    [3, 3, 9],
-    [3, 3, 5]
-]
-b = [2, -1, 4]
 
-solution = gauss_elimination(A, b)
+A = [[2.0, 1.0, -1.0, 8.0],
+     [-3.0, -1.0, 2.0,-11.0],
+     [-2.0, 1.0, 2.0, -3.0]]
+
+solution = gauss_elemination(A)
 print("Solution:", solution)
+
+
