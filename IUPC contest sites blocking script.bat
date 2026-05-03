@@ -225,7 +225,7 @@ echo 0.0.0.0 ai.google.dev
 echo 0.0.0.0 cloud.google.com 
 echo 0.0.0.0 aws.amazon.com 
 echo 0.0.0.0 azure.microsoft.com
-
+echo 0.0.0.0 ai.com
 echo 0.0.0.0 google.com 
 echo 0.0.0.0 www.google.com 
 echo 0.0.0.0 bing.com 
