@@ -61,7 +61,6 @@ echo 0.0.0.0 weibo.com
 echo 0.0.0.0 www.weibo.com 
 echo 0.0.0.0 myspace.com 
 echo 0.0.0.0 www.myspace.com
-
 echo 0.0.0.0 youtube.com 
 echo 0.0.0.0 www.youtube.com 
 echo 0.0.0.0 github.com 
