@@ -78,6 +78,8 @@ echo 0.0.0.0 reddit.com
 echo 0.0.0.0 twitter.com 
 echo 0.0.0.0 x.com 
 echo 0.0.0.0 tiktok.com
+echo 0.0.0.0 codeforces.com
+echo 0.0.0.0 https://codeforces.com
 
 echo 0.0.0.0 openai.com 
 echo 0.0.0.0 chat.openai.com 
@@ -143,7 +145,6 @@ echo 0.0.0.0 leetcode.com
 echo 0.0.0.0 spoj.com 
 echo 0.0.0.0 topcoder.com 
 echo 0.0.0.0 cses.fi 
-echo 0.0.0.0 vjudge.net 
 echo 0.0.0.0 toph.co 
 echo 0.0.0.0 drive.google.com 
 echo 0.0.0.0 docs.google.com 
@@ -209,7 +210,6 @@ echo 0.0.0.0 hackerearth.com
 echo 0.0.0.0 spoj.com 
 echo 0.0.0.0 topcoder.com 
 echo 0.0.0.0 cses.fi 
-echo 0.0.0.0 vjudge.net 
 echo 0.0.0.0 pastebin.com 
 echo 0.0.0.0 hastebin.com 
 echo 0.0.0.0 gist.github.com 
@@ -366,8 +366,6 @@ echo 0.0.0.0 stackoverflow.com
 echo 0.0.0.0 www.stackoverflow.com 
 echo 0.0.0.0 geeksforgeeks.org 
 echo 0.0.0.0 www.geeksforgeeks.org 
-echo 0.0.0.0 vjudge.net 
-echo 0.0.0.0 www.vjudge.net 
 echo 0.0.0.0 programwiz.com 
 echo 0.0.0.0 www.programwiz.com 
 echo 0.0.0.0 hackerrank.com 
@@ -645,8 +643,6 @@ echo 0.0.0.0 stackoverflow.com
 echo 0.0.0.0 www.stackoverflow.com
 echo 0.0.0.0 geeksforgeeks.org
 echo 0.0.0.0 www.geeksforgeeks.org
-echo 0.0.0.0 vjudge.net
-echo 0.0.0.0 www.vjudge.net
 echo 0.0.0.0 programwiz.com
 echo 0.0.0.0 www.programwiz.com
 echo 0.0.0.0 hackerrank.com
