@@ -6,25 +6,20 @@ cls
 echo Site-Blocker
 echo -----------------
 echo 1. Block everything except codeforces.co and its subdomains
-echo 2. Restore hosts file from backup
-echo 3. Exit
+echo 2. Exit
 echo -----------------
-set /p choice=Enter your choice (1/2/3):
+set /p choice=Enter your choice (1/2):
 
 if "%choice%"=="" goto menu
 if "%choice%"=="1" goto block_sites
-if "%choice%"=="2" goto restore_ogfile
-if "%choice%"=="3" goto end
+if "%choice%"=="2" goto end
 
 goto menu
 
 :block_sites
 cls
 echo.
-echo Blocking all sites except https://toph.co and its subdomains...
-
-:: Backup the original hosts file
-xcopy /Y C:\Windows\System32\drivers\etc\hosts C:\Windows\System32\drivers\etc\hosts_backup
+echo Blocking all sites and its subdomains...
 
 :: Clear the current hosts file
 echo. > C:\Windows\System32\drivers\etc\hosts
@@ -80,7 +75,6 @@ echo 0.0.0.0 x.com
 echo 0.0.0.0 tiktok.com
 echo 0.0.0.0 codeforces.com
 echo 0.0.0.0 https://codeforces.com
-
 echo 0.0.0.0 openai.com 
 echo 0.0.0.0 chat.openai.com 
 echo 0.0.0.0 chatgpt.com 
@@ -241,7 +235,6 @@ echo 0.0.0.0 ecosia.org
 echo 0.0.0.0 www.ecosia.org 
 echo 0.0.0.0 qwant.com 
 echo 0.0.0.0 www.qwant.com
-
 echo 0.0.0.0 youtube.com 
 echo 0.0.0.0 www.youtube.com 
 echo 0.0.0.0 netflix.com 
@@ -250,26 +243,25 @@ echo 0.0.0.0 hulu.com
 echo 0.0.0.0 www.hulu.com 
 echo 0.0.0.0 primevideo.com 
 echo 0.0.0.0 www.primevideo.com
- echo 0.0.0.0 spotify.com
- echo 0.0.0.0 www.spotify.com 
- echo 0.0.0.0 soundcloud.com 
- echo 0.0.0.0 www.soundcloud.com
- echo 0.0.0.0 apple.com 
- echo 0.0.0.0 www.apple.com 
- echo 0.0.0.0 pandora.com 
- echo 0.0.0.0 www.pandora.com 
- echo 0.0.0.0 vimeo.com 
- echo 0.0.0.0 www.vimeo.com 
- echo 0.0.0.0 dailymotion.com
- echo 0.0.0.0 www.dailymotion.com 
- echo 0.0.0.0 twitch.tv 
- echo 0.0.0.0 www.twitch.tv 
- echo 0.0.0.0 crunchyroll.com 
- echo 0.0.0.0 www.crunchyroll.com
- echo 0.0.0.0 www.shafaetsplanet.com 
- echo 0.0.0.0 mubinulazamzubayer.blogspot.com 
- echo 0.0.0.0 csacademy.com
-
+echo 0.0.0.0 spotify.com
+echo 0.0.0.0 www.spotify.com 
+echo 0.0.0.0 soundcloud.com 
+echo 0.0.0.0 www.soundcloud.com
+echo 0.0.0.0 apple.com 
+echo 0.0.0.0 www.apple.com 
+echo 0.0.0.0 pandora.com 
+echo 0.0.0.0 www.pandora.com 
+echo 0.0.0.0 vimeo.com 
+echo 0.0.0.0 www.vimeo.com 
+echo 0.0.0.0 dailymotion.com
+echo 0.0.0.0 www.dailymotion.com 
+echo 0.0.0.0 twitch.tv 
+echo 0.0.0.0 www.twitch.tv 
+echo 0.0.0.0 crunchyroll.com 
+echo 0.0.0.0 www.crunchyroll.com
+echo 0.0.0.0 www.shafaetsplanet.com 
+echo 0.0.0.0 mubinulazamzubayer.blogspot.com 
+echo 0.0.0.0 csacademy.com
 echo 0.0.0.0 amazon.com 
 echo 0.0.0.0 www.amazon.com 
 echo 0.0.0.0 ebay.com 
@@ -288,7 +280,6 @@ echo 0.0.0.0 shopify.com
 echo 0.0.0.0 www.shopify.com 
 echo 0.0.0.0 rakuten.com 
 echo 0.0.0.0 www.rakuten.com
-
 echo 0.0.0.0 marketplace.visualstudio.com 
 echo 0.0.0.0 github.com 
 echo 0.0.0.0 www.github.com 
@@ -308,7 +299,6 @@ echo 0.0.0.0 glitch.com
 echo 0.0.0.0 www.glitch.com 
 echo 0.0.0.0 hackerrank.com 
 echo 0.0.0.0 www.hackerrank.com
-
 echo 0.0.0.0 drive.google.com 
 echo 0.0.0.0 docs.google.com 
 echo 0.0.0.0 dropbox.com 
@@ -323,7 +313,6 @@ echo 0.0.0.0 mega.nz
 echo 0.0.0.0 www.mega.nz 
 echo 0.0.0.0 mediafire.com 
 echo 0.0.0.0 www.mediafire.com
-
 echo 0.0.0.0 whatsapp.com 
 echo 0.0.0.0 web.whatsapp.com 
 echo 0.0.0.0 messenger.com 
@@ -342,7 +331,6 @@ echo 0.0.0.0 slack.com
 echo 0.0.0.0 www.slack.com 
 echo 0.0.0.0 zoom.us 
 echo 0.0.0.0 www.zoom.us
-
 echo 0.0.0.0 quora.com 
 echo 0.0.0.0 www.quora.com 
 echo 0.0.0.0 medium.com 
@@ -357,7 +345,6 @@ echo 0.0.0.0 news.ycombinator.com
 echo 0.0.0.0 www.news.ycombinator.com 
 echo 0.0.0.0 bbc.com 
 echo 0.0.0.0 www.bbc.com
-
 echo 0.0.0.0 atcoder.jp 
 echo 0.0.0.0 www.atcoder.jp 
 echo 0.0.0.0 codechef.com 
@@ -384,10 +371,8 @@ echo 0.0.0.0 spoj.pl
 echo 0.0.0.0 www.spoj.pl 
 echo 0.0.0.0 cses.fi 
 echo 0.0.0.0 www.cses.fi
-
 echo 0.0.0.0 chatgpt.com 
 echo 0.0.0.0 www.chatgpt.com
-
 echo 0.0.0.0 chatgpt.com 
 echo 0.0.0.0 www.chatgpt.com 
 echo 0.0.0.0 pastebin.com 
@@ -439,7 +424,6 @@ echo 0.0.0.0 vimeo.com
 echo 0.0.0.0 youtube.com 
 echo 0.0.0.0 www.youtube.com 
 echo 0.0.0.0 acm.timus.ru
-
 echo 0.0.0.0 drive.google.com 
 echo 0.0.0.0 docs.google.com 
 echo 0.0.0.0 sheets.google.com 
@@ -459,7 +443,6 @@ echo 0.0.0.0 scholar.google.com
 echo 0.0.0.0 maps.google.com 
 echo 0.0.0.0 www.google.com 
 echo 0.0.0.0 google.com
-
 echo 0.0.0.0 www.wolframalpha.com 
 echo 0.0.0.0 cp-algorithms.com 
 echo 0.0.0.0 usaco.org 
@@ -467,8 +450,6 @@ echo 0.0.0.0 lightoj.com
 echo 0.0.0.0 www.csdn.net 
 echo 0.0.0.0 www.desmos.com
 echo 0.0.0.0 www.chatgate.ai
-
-
 echo 0.0.0.0 chrome.google.com
 echo 0.0.0.0 www.facebook.com
 echo 0.0.0.0 facebook.com
@@ -496,8 +477,6 @@ echo 0.0.0.0 weibo.com
 echo 0.0.0.0 www.weibo.com
 echo 0.0.0.0 myspace.com
 echo 0.0.0.0 www.myspace.com
-
-
 echo 0.0.0.0 google.com
 echo 0.0.0.0 www.google.com
 echo 0.0.0.0 bing.com
@@ -514,8 +493,6 @@ echo 0.0.0.0 ecosia.org
 echo 0.0.0.0 www.ecosia.org
 echo 0.0.0.0 qwant.com
 echo 0.0.0.0 www.qwant.com
-
-
 echo 0.0.0.0 youtube.com
 echo 0.0.0.0 www.youtube.com
 echo 0.0.0.0 netflix.com
@@ -543,7 +520,6 @@ echo 0.0.0.0 www.crunchyroll.com
 echo 0.0.0.0 www.shafaetsplanet.com
 echo 0.0.0.0 mubinulazamzubayer.blogspot.com
 echo 0.0.0.0 csacademy.com
-
 echo 0.0.0.0 amazon.com
 echo 0.0.0.0 www.amazon.com
 echo 0.0.0.0 ebay.com
@@ -562,8 +538,6 @@ echo 0.0.0.0 shopify.com
 echo 0.0.0.0 www.shopify.com
 echo 0.0.0.0 rakuten.com
 echo 0.0.0.0 www.rakuten.com
-
-
 echo 0.0.0.0 marketplace.visualstudio.com
 echo 0.0.0.0 github.com
 echo 0.0.0.0 www.github.com
@@ -583,8 +557,6 @@ echo 0.0.0.0 glitch.com
 echo 0.0.0.0 www.glitch.com
 echo 0.0.0.0 hackerrank.com
 echo 0.0.0.0 www.hackerrank.com
-
-
 echo 0.0.0.0 drive.google.com
 echo 0.0.0.0 docs.google.com
 echo 0.0.0.0 dropbox.com
@@ -599,7 +571,6 @@ echo 0.0.0.0 mega.nz
 echo 0.0.0.0 www.mega.nz
 echo 0.0.0.0 mediafire.com
 echo 0.0.0.0 www.mediafire.com
-
 echo 0.0.0.0 whatsapp.com
 echo 0.0.0.0 web.whatsapp.com
 echo 0.0.0.0 messenger.com
@@ -618,8 +589,6 @@ echo 0.0.0.0 slack.com
 echo 0.0.0.0 www.slack.com
 echo 0.0.0.0 zoom.us
 echo 0.0.0.0 www.zoom.us
-
-
 echo 0.0.0.0 quora.com
 echo 0.0.0.0 www.quora.com
 echo 0.0.0.0 medium.com
@@ -634,7 +603,6 @@ echo 0.0.0.0 news.ycombinator.com
 echo 0.0.0.0 www.news.ycombinator.com
 echo 0.0.0.0 bbc.com
 echo 0.0.0.0 www.bbc.com
-
 echo 0.0.0.0 atcoder.jp
 echo 0.0.0.0 www.atcoder.jp
 echo 0.0.0.0 codechef.com
@@ -661,10 +629,8 @@ echo 0.0.0.0 spoj.pl
 echo 0.0.0.0 www.spoj.pl
 echo 0.0.0.0 cses.fi
 echo 0.0.0.0 www.cses.fi
-
 echo 0.0.0.0 chatgpt.com
 echo 0.0.0.0 www.chatgpt.com
-
 echo 0.0.0.0 chatgpt.com
 echo 0.0.0.0 www.chatgpt.com
 echo 0.0.0.0 pastebin.com
@@ -740,7 +706,6 @@ echo 0.0.0.0 scholar.google.com
 echo 0.0.0.0 maps.google.com
 echo 0.0.0.0 www.google.com
 echo 0.0.0.0 google.com
-
 echo 0.0.0.0 www.wolframalpha.com
 echo 0.0.0.0 cp-algorithms.com
 echo 0.0.0.0 usaco.org
@@ -753,16 +718,5 @@ echo 0.0.0.0 www.desmos.com
 echo Blocking rules applied successfully!
 pause
 goto menu
-
-:restore_ogfile
-cls
-echo.
-echo Restoring hosts file from backup...
-del C:\Windows\System32\drivers\etc\hosts
-copy /Y C:\Windows\System32\drivers\etc\hosts_backup C:\Windows\System32\drivers\etc\hosts
-echo Hosts file restored successfully.
-pause
-goto menu
-
 :end
 exit
