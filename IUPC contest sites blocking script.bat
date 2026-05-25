@@ -28,7 +28,6 @@ echo. > C:\Windows\System32\drivers\etc\hosts
 (
     echo 127.0.0.1 localhost
     echo ::1 localhost
-
 echo 0.0.0.0 chrome.google.com 
 echo 0.0.0.0 www.facebook.com 
 echo 0.0.0.0 facebook.com
