@@ -51,6 +51,9 @@ echo 0.0.0.0 periscope.tv
 echo 0.0.0.0 www.periscope.tv 
 echo 0.0.0.0 vk.com 
 echo 0.0.0.0 www.vk.com 
+echo 0.0.0.0 vjudge.com 
+echo 0.0.0.0 www.vjudge.net
+echo 0.0.0.0 https://vjudge.net
 echo 0.0.0.0 weibo.com 
 echo 0.0.0.0 www.weibo.com 
 echo 0.0.0.0 myspace.com 
@@ -72,8 +75,6 @@ echo 0.0.0.0 reddit.com
 echo 0.0.0.0 twitter.com 
 echo 0.0.0.0 x.com 
 echo 0.0.0.0 tiktok.com
-echo 0.0.0.0 codeforces.com
-echo 0.0.0.0 https://codeforces.com
 echo 0.0.0.0 openai.com 
 echo 0.0.0.0 chat.openai.com 
 echo 0.0.0.0 chatgpt.com 
