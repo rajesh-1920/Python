@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 :menu
 cls
-echo Site-Blocker
+echo Site-Blocker  
 echo -----------------
 echo 1. Block everything except codeforces.co and its subdomains
 echo 2. Exit
