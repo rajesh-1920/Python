@@ -6,6 +6,7 @@ int main() {
     double failProb = 1 - passProb;
     double mean = passProb;
     double variance = passProb * failProb;
+
     
     cout << "Pass Probability: " << passProb << endl;
     cout << "Fail Probability: " << failProb << endl;
