@@ -137,7 +137,8 @@ echo 0.0.0.0 hackerrank.com
 echo 0.0.0.0 hackerearth.com 
 echo 0.0.0.0 leetcode.com 
 echo 0.0.0.0 spoj.com 
-echo 0.0.0.0 topcoder.com 
+echo 0.0.0.0 topcoder.com
+echo 0.0.0.0 codeforces.com
 echo 0.0.0.0 cses.fi 
 echo 0.0.0.0 toph.co 
 echo 0.0.0.0 drive.google.com 
