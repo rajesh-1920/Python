@@ -5,7 +5,7 @@ setlocal enabledelayedexpansion
 cls
 echo Site-Blocker  
 echo -----------------
-echo 1. Block everything except codeforces.co and its subdomains
+echo 1. Block everything except bapsoj and its subdomains
 echo 2. Exit
 echo -----------------
 set /p choice=Enter your choice (1/2):
