@@ -1,0 +1,297 @@
+1. R1 configuration
+
+enable
+configure terminal
+hostname R1
+enable secret class
+line console 0
+password cisco
+login
+exit
+line vty 0 4
+password cisco
+login
+exit
+
+interface Serial1/0
+ip address 209.165.201.2 255.255.255.252
+no shutdown
+exit
+interface Serial0/0
+ip address 10.0.1.1 255.255.255.252
+clock rate 64000
+no shutdown
+exit
+interface Serial0/1
+ip address 10.0.1.5 255.255.255.252
+clock rate 64000
+no shutdown
+exit
+interface Serial0/2
+ip address 10.0.1.9 255.255.255.252
+clock rate 64000
+no shutdown
+exit
+interface Serial0/3
+ip address 10.0.1.13 255.255.255.252
+clock rate 64000
+no shutdown
+exit
+
+
+2. ISP configuration
+
+enable
+configure terminal
+hostname ISP
+enable secret class
+line console 0
+password cisco
+login
+exit
+line vty 0 4
+password cisco
+login
+exit
+
+interface Serial0/0
+ip address 209.165.201.1 255.255.255.252
+clock rate 64000
+no shutdown
+exit
+interface FastEthernet0/0
+ip address 209.165.200.225 255.255.255.252
+no shutdown
+exit
+
+এখানে clock rate 64000 ISP-এর Serial interface-এ দেওয়া হয়েছে, কারণ প্রশ্নে ISP-কে R1 link-এর DCE বলা হয়েছে।
+
+3. B1 configuration
+enable
+configure terminal
+hostname B1
+enable secret class
+line console 0
+password cisco
+login
+exit
+line vty 0 4
+password cisco
+login
+exit
+
+interface Serial0/0
+ip address 10.0.1.2 255.255.255.252
+no shutdown
+exit
+interface FastEthernet0/0
+ip address 10.1.0.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet0/1
+ip address 10.1.16.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet1/0
+ip address 10.1.32.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet1/1
+ip address 10.1.48.1 255.255.240.0
+no shutdown
+exit
+
+
+4. B2 configuration
+
+enable
+configure terminal
+hostname B2
+enable secret class
+line console 0
+password cisco
+login
+exit
+line vty 0 4
+password cisco
+login
+exit
+
+interface Serial0/0
+ip address 10.0.1.6 255.255.255.252
+no shutdown
+exit
+interface FastEthernet0/0
+ip address 10.1.64.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet0/1
+ip address 10.1.80.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet1/0
+ip address 10.1.96.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet1/1
+ip address 10.1.112.1 255.255.240.0
+no shutdown
+exit
+
+
+5. B3 configuration
+
+enable
+configure terminal
+hostname B3
+enable secret class
+line console 0
+password cisco
+login
+exit
+line vty 0 4
+password cisco
+login
+exit
+
+interface Serial0/0
+ip address 10.0.1.10 255.255.255.252
+no shutdown
+exit
+interface FastEthernet0/0
+ip address 10.1.128.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet0/1
+ip address 10.1.144.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet1/0
+ip address 10.1.160.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet1/1
+ip address 10.1.176.1 255.255.240.0
+no shutdown
+exit
+
+
+6. B4 configuration
+
+enable
+configure terminal
+hostname B4
+enable secret class
+line console 0
+password cisco
+login
+exit
+line vty 0 4
+password cisco
+login
+exit
+
+interface Serial0/0
+ip address 10.0.1.14 255.255.255.252
+no shutdown
+exit
+interface FastEthernet0/0
+ip address 10.1.192.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet0/1
+ip address 10.1.208.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet1/0
+ip address 10.1.224.1 255.255.240.0
+no shutdown
+exit
+interface FastEthernet1/1
+ip address 10.1.240.1 255.255.240.0
+no shutdown
+exit
+
+সব router-এর configuration শেষে:
+end
+copy running-config startup-config
+
+
+Task 4: Static ও default routing
+এই Task-এ নির্দেশ অনুযায়ী exit interface ব্যবহার করে route configure করবে।
+
+1. R1 — চারটি static route ও একটি default route
+
+enable
+configure terminal
+ip route 10.1.0.0 255.255.192.0 Serial0/0
+ip route 10.1.64.0 255.255.192.0 Serial0/1
+ip route 10.1.128.0 255.255.192.0 Serial0/2
+ip route 10.1.192.0 255.255.192.0 Serial0/3
+ip route 0.0.0.0 0.0.0.0 Serial1/0
+end
+
+2. B1, B2, B3, B4 — default route
+enable
+configure terminal
+ip route 0.0.0.0 0.0.0.0 Serial0/0
+end
+
+3. ISP — দুটি static route
+
+enable
+configure terminal
+ip route 10.0.1.0 255.255.255.240 Serial0/0
+ip route 10.1.0.0 255.255.0.0 Serial0/0
+end
+
+
+Task 5: RIPv1 configuration ও routing table
+তোমার activity-র Task 5-এ branch router-এ RIPv1 configure করতে বলা হয়েছে। তাই চারটি branch router-এ নিচের configuration দাও।
+
+B1, B2, B3, B4:
+
+enable
+configure terminal
+router rip
+version 1
+network 10.0.0.0
+end
+
+*** erpor PC, server configure korbo.
+
+Server:
+Ip:- 209.165.200.226
+sub:-255.255.255.252
+DG:- 209.165.200.225
+DNS:- 209.165.200.226
+erpor service theke DNS on kore name dite hobe.
+
+Pc1:
+Ip:- 10.1.240.2
+sub:-255.255.240.0
+DG:- 10.1.240.1
+DNS:- 209.165.200.226
+
+pc2:
+Ip:- 10.1.0.2
+sub:-255.255.240.0
+DG:- 10.1.0.1
+DNS:- 209.165.200.226
+
+
+
+R1# ping 209.165.201.1
+R1# ping 10.0.1.2
+R1# ping 10.0.1.6
+R1# ping 10.0.1.10
+R1# ping 10.0.1.14
+তারপর ISP থেকে R1 এবং server-কে ping করবে:
+ISP# ping 209.165.201.2
+ISP# ping 209.165.200.226
+মনে রেখো, এগুলো সফল হওয়ার 
+
+tracert 209.165.200.224
+tracert 10.1.0.2
+tracert 10.1.240.2
+Displaying commands.txt.
